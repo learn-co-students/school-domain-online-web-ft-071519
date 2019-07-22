@@ -1,24 +1,24 @@
+require 'pry'
+
 class School
   
+  attr_accessor :roster
   attr_reader :name
   
   def initialize(name)
     @name = name
-    
+    @roster = {}
   end
-  
-  def roster
-    roster = {}
-  end
-  
+
   def add_student(name, grade)
-    if roster.has_key?(grade)
-      roster[:grade] << name
-    else
-      roster[:grade] = [name]
-     
-    end
+    roster[grade] ||= []
+    roster[grade] << name
+    
+    # return updated roster
     roster
-  end
+  end  
+    
 end
 
+school = School.new("UCCS")
+# binding.pry
