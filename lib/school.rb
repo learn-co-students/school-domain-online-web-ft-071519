@@ -17,6 +17,10 @@ class School
     # return updated roster
     roster
   end  
+  
+  def grade(grade)
+    roster[grade]
+  end
     
 end
 
